@@ -50,14 +50,14 @@ function App() {
         }
     };
 
-    const onCkeckout = () => {
+    const onCheckout = () => {
         telegram.MainButton.text = "Sotib olish :)";
         telegram.MainButton.show();
     };
 
     return (
         <div>
-            <Cart cartItems={cartItems}  onCkeckout={onCkeckout} />
+            <Cart cartItems={cartItems} onCheckout={onCheckout} />
             <div className="card">
                 {courses.map((course) => (
                     <div className="cards-container" key={course.id}>
