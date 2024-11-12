@@ -1,0 +1,24 @@
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.cards-container {
+  width: 350px; 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.cards-container h1 {
+  font-size: 1.6rem;
+  color: #FFF;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
