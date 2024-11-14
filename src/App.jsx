@@ -58,7 +58,7 @@ function App() {
     const onSendData = useCallback(() => {
         const queryId = telegram.initDataUnsave?.query_id;
         if (queryId) {
-            fetch("http://localhost:8000/web-data", {
+            fetch("https://telegram-web-bot-6a300eee1ecc.herokuapp.com/web-data", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
