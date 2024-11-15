@@ -12,6 +12,11 @@ function App() {
     useEffect(() => {
         telegram.ready();
     }, []);
+    useEffect(() => {
+        if (cartItems.length === 0) {
+            telegram.MainButton.hide();
+        }
+    }, [cartItems]);
 
     const onAddItem = (item) => {
         const existItem = cartItems.find((c) => c.id === item.id);
@@ -48,11 +53,16 @@ function App() {
             console.log("DELETE_ITEM_QUANTITY_1", newData);
             setCartItems(newData);
         }
+        onCheckout();
     };
 
     const onCheckout = () => {
-        telegram.MainButton.text = "Sotib olish :)";
-        telegram.MainButton.show();
+        if (cartItems.length > 0) {
+            telegram.MainButton.text = "Sotib olish :)";
+            telegram.MainButton.show();
+        } else {
+            telegram.MainButton.hide();
+        }
     };
 
     const onSendData = useCallback(() => {
