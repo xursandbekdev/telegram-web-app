@@ -58,17 +58,21 @@ function App() {
     const onSendData = useCallback(() => {
         const queryId = telegram.initDataUnsave?.query_id;
         if (queryId) {
-            fetch("https://telegram-web-bot-6a300eee1ecc.herokuapp.com/web-data", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(cartItems),
-            });
-        } else {
-            telegram.sendData(
-                JSON.stringify({ products: cartItems, queryId: queryId })
+            fetch(
+                "https://telegram-web-bot-6a300eee1ecc.herokuapp.com/web-data",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        products: cartItems,
+                        queryId: queryId,
+                    }),
+                }
             );
+        } else {
+            telegram.sendData(JSON.stringify(cartItems));
         }
     }, [cartItems]);
     useEffect(() => {
