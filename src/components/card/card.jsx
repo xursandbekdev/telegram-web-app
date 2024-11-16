@@ -36,10 +36,7 @@ const Card = (props) => {
                     <h2 className="card-title">{course.title}</h2>
                 </div>
                 <div className="card-price">
-                    {course.price?.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD",
-                    })}
+                    {course.price}so'm
                 </div>
             </div>
             <div className="hr"></div>
